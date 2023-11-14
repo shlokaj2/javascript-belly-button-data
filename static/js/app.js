@@ -94,10 +94,13 @@ function bubbleChart(id) {
     x: otu_ids,
     y: sample_values,
     text: otu_labels,
-    marker: otu_ids,
+    marker: { 
+    color: otu_ids,
+    size: sample_values,
+    },
     name: "Belly Button",
-    type: "bubble",
-
+    mode: "markers",
+    }
     // Data array
     var data = [trace2]
 
@@ -112,7 +115,7 @@ function bubbleChart(id) {
    
 // Render the plot to the div tag with id "plot"
     Plotly.newPlot("bubble", data, layout);
-    }}
+    }
 
 function optionChanged(value) {
  metaData(value)
